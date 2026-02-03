@@ -1,5 +1,6 @@
 # MeetMinutes 
-    MeetMinutes is a full-stack meeting management system designed to organize meetings, track minutes, assign tasks, and enable real-time communication between participants.  
+    MeetMinutes is a full-stack meeting management system designed to organize meetings,
+    track minutes, assign tasks, and enable real-time communication between participants.  
 ---
 ## Key Features
 
