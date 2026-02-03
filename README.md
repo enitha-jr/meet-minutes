@@ -10,6 +10,7 @@
 - **Assign tasks** individually 
 - Track progress through **reports**
 - Support for **follow-up** meetings
+- **Integrated calendar** for easy access
 - **Role-based** access control
 
 - **Meeting-level** Roles: Host, Minute Taker, Members
@@ -18,7 +19,6 @@
 ---
 
 ## Tech Stack
-
 ### Frontend
 - React.js
 - Socket.IO Client
