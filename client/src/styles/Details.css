@@ -1,0 +1,274 @@
+/* ---------- Main Layout ---------- */
+.details-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100%;
+  background-color: #f0f4f8;
+  overflow-y: auto;
+}
+
+/* ---------- Edit Button Section ---------- */
+.details-handlers {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.details-handlers button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  background-color: #00496d;
+  color: white;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.details-handlers button:hover {
+  background-color: #00628f;
+  transform: scale(1.05);
+}
+
+/* ---------- Meeting Details Card ---------- */
+.details-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ---------- Detail Layout ---------- */
+.detail-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.detail-item span {
+  font-weight: 600;
+  color: #00496d;
+}
+
+.detail-item-left,
+.detail-item-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ---------- Scrollable Sections ---------- */
+.scroll-description,
+.scroll-members {
+  max-height: 150px;
+  width: 90%;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  overflow-y: auto;
+  margin-top: 4px;
+  font-size: 0.95rem;
+  border: 1px solid #e0e0e0;
+}
+
+.scroll-members div {
+  padding: 2px 0;
+}
+
+/* ---------- Action Buttons ---------- */
+.action-buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* margin-bottom: 25px; */
+}
+
+.action-buttons button {
+  min-width: 140px;
+  height: 45px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.end-meeting-btn {
+  background-color: #e63946;
+}
+
+.follow-up-btn {
+  background-color: #28a745;
+}
+
+.end-meeting-btn:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+.follow-up-btn:hover {
+  background-color: #1e7a34;
+  transform: scale(1.05);
+}
+
+/* ============ Popup Overlay (Background Dim) ============ */
+.task-form-content {
+  position: fixed;
+  inset: 0;
+  z-index: 999; /* below popup container */
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+/* ============ Popup Container ============ */
+.popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; /* ensure it's above overlay */
+  background: #ffffff;
+  border-radius: 14px;
+  width: 90%;
+  max-width: 420px;
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: slideUp 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  color: #222;
+}
+
+/* Title */
+.popup-container h4 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Optional text */
+.popup-container p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ============ Buttons ============ */
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.popup-buttons button {
+  flex: 1;
+  min-width: 100px;
+  max-width: 130px;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.popup-buttons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup-confirm {
+  background-color: #198754;
+}
+
+.popup-close {
+  background-color: #dc3545;
+}
+
+/* ============ Animations ============ */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, -40%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 600px) {
+  .popup-container {
+    width: 92%;
+    padding: 1.2rem;
+  }
+
+  .popup-buttons button {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+}
+
+
+.details-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.details-input:focus {
+  border-color: #4f46e5; 
+  box-shadow: 0 0 4px rgba(79, 70, 229, 0.3);
+}
+
+.details-input::placeholder {
+  color: #aaa;
+}
+
+.back-btn {
+  background-color: #6c757d;
+}

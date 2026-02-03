@@ -1,0 +1,24 @@
+.calendar-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    overflow-y:auto;
+    background-color: rgba(213, 227, 255, 0.306);
+}
+
+
+.event-host {
+    background-color: #ffae0080 !important; /* Yellow */
+    color: #000 !important; /* Black text */
+    border-radius: 5px;
+    border: none;
+}
+
+/* Styles for default events */
+.event-default {
+    background-color: #0077b5 !important; /* Blue */
+    color: #fff !important; /* White text */
+    border-radius: 5px;
+    border: none;
+}

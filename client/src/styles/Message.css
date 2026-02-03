@@ -1,0 +1,279 @@
+/****************** MAIN CONTAINER ******************/
+
+.message-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 90vh;
+    width: 85vw;
+    padding: 20px;
+    margin: 2vh auto;
+    background-color: #2a3b4ca7;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/****************** INBOX PANEL ******************/
+
+.inbox-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 22%;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: #f0f0f0;
+    overflow-y: auto;
+}
+
+.inbox-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+}
+
+.inbox-item {
+    padding: 12px;
+    margin: 4px 0;
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 1em;
+    text-decoration: none;
+    color: #2a3b4c;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 3px 6px -2px;
+}
+
+.inbox-item:hover {
+    background-color: #e6f0ff;
+    transform: translateY(-1px);
+}
+
+.inbox-item.active {
+    background-color: #567c8d;
+    color: #fff;
+    font-weight: bold;
+    transform: scale(1.03);
+}
+
+/****************** CHAT WINDOW ******************/
+
+.chat-window {
+    display: flex;
+    flex-direction: column;
+    width: 74%;
+    margin: 0;
+    border-radius: 12px;
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
+
+/****************** CHAT CONTENT ******************/
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border-radius: 12px;
+}
+
+/****************** CHAT HEADER ******************/
+
+.chat-header {
+    padding: 12px;
+    color: #2a3b4c;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 6px -1px,
+        rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    background-color: #e2e8f0;
+}
+
+/****************** MESSAGE HISTORY - IMPROVED FOR GROUP CHAT ******************/
+
+.message-history {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #f9fafb;
+}
+
+.message-item {
+    padding: 10px 14px;
+    margin: 4px 0;
+    border-radius: 16px;
+    font-size: 1rem;
+    word-break: break-word;
+    max-width: 65%;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.message-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+/* Sent messages - align right */
+.message-item.sent {
+    background: linear-gradient(135deg, #567c8d 0%, #4a6d7d 100%);
+    color: #ffffff;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+/* Received messages - align left */
+.message-item.received {
+    background-color: #ffffff;
+    color: #1e293b;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    border: 1px solid #e5e7eb;
+}
+
+/* Username display for group chat */
+.message-item .sender-name {
+    font-weight: 600;
+    font-size: 0.8em;
+    margin-bottom: 4px;
+    display: block;
+    letter-spacing: 0.3px;
+}
+
+/* Different color for sent vs received username */
+.message-item.sent .sender-name {
+    color: #d1e3eb;
+    text-align: right;
+}
+
+.message-item.received .sender-name {
+    color: #567c8d;
+    text-align: left;
+}
+
+/* Message content styling */
+.message-item .message-content {
+    line-height: 1.5;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.message-item.sent .message-content {
+    text-align: right;
+}
+
+.message-item.received .message-content {
+    text-align: left;
+}
+
+/****************** MESSAGE FORM ******************/
+
+.message-form {
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border-top: 1.5px solid #2a3b4c;
+    background-color: #e2e8f0;
+    padding: 0 10px;
+}
+
+.message-input {
+    height: 3vh;
+    padding: 10px 12px;
+    font-size: 1em;
+    border-radius: 14px;
+    width: 80%;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.message-input:focus {
+    border-color: #567c8d;
+    box-shadow: 0 0 0 3px rgba(86, 124, 141, 0.1);
+}
+
+/****************** SEND BUTTON ******************/
+
+.send-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 40px; */
+    /* width: 60px; */
+    font-size: 1rem;
+    color: #efeae6;
+    border: none;
+    border-radius: 15px !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.send-button:hover {
+    background-color: #1c2a38;
+    transform: scale(1.05);
+}
+
+.send-button:active {
+    transform: scale(0.95);
+}
+
+/****************** NO CHAT SELECTED ******************/
+
+.no-chat-selected {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1.2em;
+    color: #555;
+}
+
+/****************** MISC / OPTIONAL ******************/
+
+.no-messages {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    color: #6b7280;
+    font-size: 0.95em;
+}
+
+.user-label {
+    font-weight: bold;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/****************** SCROLLBAR STYLING ******************/
+
+.message-history::-webkit-scrollbar {
+    width: 8px;
+}
+
+.message-history::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.message-history::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.message-history::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}

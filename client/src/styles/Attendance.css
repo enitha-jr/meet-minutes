@@ -1,0 +1,192 @@
+.attendance-content{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.attendance-container {
+    margin: 30px 0px 50px 0px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: rgba(250, 250, 250, 0.554);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 40vw;
+}
+
+.attendance-table{
+    border-collapse: collapse;
+    width: calc(100% - 40px);
+    margin: 0px 20px;
+}
+.attendance-table tr{
+    border-bottom: 1px solid #0076b55a;
+}
+
+.attendance-table tr:last-child{
+    border-bottom: none;
+}
+
+.attendance-table td {
+  padding: 7px;
+  font-size: 17px;
+}
+.attendance-table-row td:first-child {
+    font-weight:500;
+    width:5%;
+    color: rgb(0, 0, 54);
+    text-align: center;
+}
+
+.attendance-table-row td:last-child {
+    font-weight:400;
+    font-size:small;
+    width:10%;
+    color: rgb(0, 0, 54);
+}
+
+.search-container {
+    display: flex;
+    justify-content: flex-start;
+    width:25vw;
+    margin-top:15px;
+    /* border:2px solid red; */
+  }
+  
+  .search-input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: max-content;
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    padding: 7px;
+  }
+  
+  .search-icon {
+    color: #cbd5e0;
+    margin-right: 0.75rem;
+    font-size: 1.25rem;
+  }
+  
+  .search-input {
+    background-color: transparent;
+    outline: none;
+    color: grey;
+    font-size: medium;
+    width: 100%;
+    border: none;
+  }
+  
+  .search-input::placeholder {
+    color: #cbd5e0;
+  }
+
+  .attendance-btn {
+    padding: 5px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; 
+    text-transform: uppercase;
+    width:  7vw;
+    text-align: center;
+  }
+  
+  .attendance-btn.present {
+    background-color: #4CAF50; 
+    color: white;
+    border-color: #4CAF50;
+  }
+  
+  .attendance-btn.present:hover {
+    background-color: #45a049; /* Darker green on hover */
+    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.4); /* Green shadow on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+  }
+  
+  /* For absent state */
+  .attendance-btn.absent {
+    background-color: #f44336; /* Red for absent */
+    color: white;
+    border-color: #f44336;
+  }
+  
+  .attendance-btn.absent:hover {
+    background-color: #e53935; /* Darker red on hover */
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.4); /* Red shadow on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+  }
+  
+  /* Keyframe for slide-in effect on smaller screens */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Keyframe for fade-in and zoom effect */
+@keyframes fadeInZoom {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Keyframe for attention-grabbing bounce effect */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Responsive animations using media queries */
+@media (max-width: 768px) {
+  .attendance-container {
+    width: 90vw;
+    animation: slideInFromLeft 0.8s ease-out;
+  }
+  
+  .search-input-container {
+    animation: fadeInZoom 0.5s ease-in-out;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .attendance-container {
+    width: 60vw;
+    animation: fadeInZoom 0.7s ease-in-out;
+  }
+  
+  .attendance-btn {
+    animation: bounce 1.5s infinite; /* Infinite bounce effect for buttons */
+  }
+}
+
+@media (min-width: 1201px) {
+  .attendance-container {
+    width: 40vw;
+    animation: fadeInZoom 0.5s ease-in-out;
+  }
+}

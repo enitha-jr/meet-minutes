@@ -1,0 +1,246 @@
+/* ---------------- ADD BUTTON ---------------- */
+.add-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6vw;
+    height: 5vh;
+    border-radius: 6px;
+    background-color: #0077B5;
+    color: white;
+    font-weight: 400;
+    margin: 50px 0 0 50px;
+    cursor: pointer;
+    padding: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #005f8b;
+}
+
+/* ---------------- TASK TABLE ---------------- */
+.task-container {
+    margin: 50px 0 100px 50px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: rgba(250, 250, 250, 0.85);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 70vw;
+    text-align: center;
+}
+
+.task-table {
+    border-collapse: collapse;
+    width: calc(100% - 40px);
+    margin: 0 20px;
+}
+
+.task-table tr {
+    border-bottom: 1px solid #0076b55a;
+}
+
+.task-table tr:last-child {
+    border-bottom: none;
+}
+
+.task-table td {
+    padding: 7px;
+    font-size: 17px;
+    text-align: center !important;
+}
+
+.task-table-row td:first-child {
+    font-weight: 500;
+    width: 5%;
+    color: rgb(0, 0, 54);
+}
+
+.task-table-row td:nth-child(2) { width: 20%; text-align: left; }
+.task-table-row td:nth-child(3) { width: 13%; }
+.task-table-row td:nth-child(4) { width: 13%; }
+.task-table-row td:nth-child(5) { width: 13%; }
+.task-table-row td:nth-child(6) { width: 10%; }
+
+.task-edit-button {
+    margin-right: 25px;
+}
+
+.task-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---------------- POPUP + OVERLAY ---------------- */
+
+.head4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 5vh;
+    color: #005f8b;
+    margin-bottom: 10px;
+}
+
+.head4 h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* ---------------- FORM ---------------- */
+.meettask-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.meettask-form > div {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* label : input ratio */
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.meettask-form label {
+    font-size: medium;
+    color: #555;
+    margin-left: 5px;
+}
+
+.meettask-form input[type="text"],
+.meettask-form input[type="date"],
+.meettask-form textarea,
+.meettask-form select {
+    width: 100%; /* fill the second grid column completely */
+    padding: 10px;
+    border: 1px solid #0077B5;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #F6F9FF;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box; /* ensures padding doesn't increase width */
+}
+
+.meettask-form textarea {
+    resize: vertical; /* allow vertical resize only */
+}
+
+.meettask-form input:focus,
+.meettask-form textarea:focus,
+.meettask-form select:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 4px rgba(79, 70, 229, 0.3);
+}
+
+.meettask-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.meettask-btn button[type="submit"] {
+    padding: 10px;
+    font-family: Arial;
+    font-weight: 500;
+    color: #fff;
+    background-color: #0077B5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 10vw;
+    margin:  10px 10vw 0 10vw;
+}
+
+.close-btn:hover {
+    cursor: pointer;
+}
+
+/* ---------------- TASK DETAILS CARD ---------------- */
+.mytask-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mytask-card div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mytask-card label {
+    font-weight: 600;
+    color: #555;
+}
+
+/* ---------------- POPUP BUTTONS ---------------- */
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.popup-buttons button {
+  flex: 1;
+  min-width: 100px;
+  max-width: 130px;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.popup-buttons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup-confirm {
+  background-color: #198754;
+}
+
+.popup-close {
+  background-color: #dc3545;
+}
+
+/* ---------------- ANIMATIONS ---------------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, -40%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 600px) {
+  .mytask-popup-container, .popup-container {
+    width: 92%;
+    padding: 1.2rem;
+  }
+
+  .popup-buttons button {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+}

@@ -1,0 +1,149 @@
+.tobe-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    height: 100%;
+    overflow-y: auto;
+  }
+  
+  .tobe-container {
+    margin: 50px 0 50px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: rgba(250, 250, 250, 0.554);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    width: 65vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+  }
+  
+  .tobe-container .head3{
+    margin-bottom: 10px;
+  }
+  
+  .tobe-table {
+    /* margin: 5px; */
+    width: 95%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    background-color: transparent;
+  }
+  
+  .tobe-table-row {
+    background-color: #eee;
+    border: 5px solid;
+    border-radius: 15px;
+    margin-bottom: 10px; 
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .tobe-table-row> td{
+    padding: 50px;
+    /* border: 2px solid red; */
+    /* border-right: 2px solid #0077b5; */
+  
+  }
+  
+  
+  .tobe-table-row:last-child {
+    margin-bottom: 0;
+  }
+  
+  
+  .tobe-table-row:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px #0000001d;
+    background-color: #ccc;
+  }
+  
+  .tobe-table-row td {
+    padding: 15px;
+    text-align: left;
+    font-size: 14px;
+    /* border-radius: 5px;  */
+  }
+  
+  .tobe-status-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  .tobe-table-row td:first-child {
+    width: 50%;
+  }
+  .tobe-table-row td:last-child {
+    text-align: center;
+  }
+  
+  
+  .tobe-table-row td:nth-child(2) {
+    width:30%;
+    text-align: end;
+  }
+  
+  .Task{
+    margin-bottom: 50px;
+  }
+  
+  .tobe-status-btn.assigned {
+    background-color: #888;
+  }
+  
+  .tobe-status-btn.pending {
+    background-color: #fb9d05;
+  }
+  
+  .tobe-status-btn.completed {
+    background-color: #27ae60;
+  }
+  
+  .tobe-status-btn.not-assigned {
+    background-color: rgb(248, 58, 58);
+  }
+  
+  @media all and (max-width: 767px) {
+    .tobe-table {
+      display: block;
+    }
+  
+    .tobe-table-row {
+      display: block;
+      margin-bottom: 20px;
+      box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      border-radius: 5px;
+    }
+  
+    .tobe-table-row td {
+      display: block;
+      text-align: right;
+      font-size: 14px;
+      padding: 5px 0;
+      position: relative;
+    }
+  
+    .tobe-table-row td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #333;
+      position: absolute;
+      left: 10px;
+      text-align: left;
+    }
+  
+    .tobe-status-btn {
+      margin-top: 10px;
+    }
+  }

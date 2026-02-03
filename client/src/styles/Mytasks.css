@@ -1,0 +1,191 @@
+/* ================================
+   MY TASKS PAGE – MAIN LAYOUT
+   ================================ */
+
+   .mytasks-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* ================================
+   TASK TABLE WRAPPER
+   ================================ */
+
+.mytasks-container {
+    margin: 40px 0 60px 50px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: rgba(250, 250, 250, 0.85);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 55vw;
+}
+
+/* ================================
+   TASK TABLE
+   ================================ */
+
+.mytasks-table {
+    border-collapse: collapse;
+    width: calc(100% - 40px);
+    margin: 20px auto;
+}
+
+.mytasks-table-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    background-color: rgba(103, 153, 180, 0.126);
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.mytasks-table-row:hover {
+    background-color: rgba(0, 118, 181, 0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+/* Column widths */
+
+.mytasks-table-row td:first-child {
+    font-weight: 500;
+    color: rgb(0, 0, 54);
+    width: 10%;
+    text-align: center;
+}
+
+.mytasks-table-row td:nth-child(2) {
+    width: 40%;
+    text-align: left;
+
+}
+
+.mytasks-table-row td:nth-child(3) {
+    width: 20%;
+    text-align: center;
+}
+
+.mytasks-table-row td:last-child {
+    width: 20%;
+    text-align: center;
+}
+
+
+.mytasks-status-btn {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 8vw;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+}
+
+.mytasks-status-btn.assigned {
+    background-color: grey;
+}
+
+.mytasks-status-btn.pending {
+    background-color: #E59D29;
+}
+
+.mytasks-status-btn.completed {
+    background-color: green;
+}
+
+.mytasks-status-btn.not-assigned {
+    background-color: #ff4747;
+}
+
+/* Slide animation */
+@keyframes slide-in {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.mytask-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mytask-card div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+
+.mytask-card label {
+    font-weight: 600;
+    color: #555;
+}
+
+
+
+.task-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.task-btn button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    width: 10vw;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.task-btn button:hover {
+    transform: scale(1.03);
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+
+@media (max-width: 500px) {
+    .popup-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .head4 h4 {
+        font-size: 1rem;
+    }
+
+    .task-btn button {
+        width: 50vw;
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .mytasks-container {
+        width: 90vw;
+        margin-left: 0;
+    }
+
+    .mytasks-table-row td:nth-child(2) {
+        width: 50%;
+    }
+}
