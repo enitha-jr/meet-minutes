@@ -24,4 +24,5 @@ dist-ssr
 *.sw?
 
 # Build directories
+# Uncomment the following line if you want to ignore the build output directory
 dist/
