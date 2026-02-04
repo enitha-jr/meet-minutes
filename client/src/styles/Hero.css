@@ -1,0 +1,136 @@
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero-section {
+    background: #2a3b4c;
+    color: white;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+
+/* =========================================
+   MAIN ROW (2 columns only)
+========================================= */
+
+.hero-row {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 60px;
+}
+
+
+/* =========================================
+   LEFT SIDE (image + text)
+========================================= */
+
+.hero-text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Montserrat', sans-serif !important;
+    /* border: 2px solid red; */
+}
+
+
+/* hero image */
+.hero-text img {
+    width: 75%;
+    border-radius: 14px;
+    margin-bottom: 22px;
+    box-shadow: 0 20px 45px rgba(99, 99, 99, 0.35);
+}
+
+
+/* title */
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* subtitle */
+.hero-text p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+}
+
+
+/* =========================================
+   RIGHT SIDE (LOGIN)
+========================================= */
+
+.hero-login-wrapper {
+    width: 360px;
+}
+
+
+
+/* =========================================
+   SCROLL ARROW
+========================================= */
+
+.scroll-arrow {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+
+    animation: heroBounce 1.2s infinite;
+}
+
+.scroll-arrow svg {
+    font-size: 22px;
+    color: white;
+}
+
+@keyframes heroBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .hero-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero-text {
+        width: 100%;
+        align-items: center;
+    }
+
+    .hero-login-wrapper {
+        width: 90%;
+    }
+}

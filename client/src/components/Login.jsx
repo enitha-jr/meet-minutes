@@ -28,13 +28,29 @@ function Login() {
         }));
     }
 
-    useEffect(() => {
-        dispatch(setAuth({}))
-    }, [dispatch])
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         // console.log('Form Data:', loginData);
+
+        // Demo mode login - any credentials work in demo mode
+        if (
+            loginData.email === "demo@gmail.com" &&
+            loginData.password === "demo"
+        ) {
+            const demoUser = {
+                token: "demo-token-123",
+                user_id: 1,
+                username: "Demo Host",
+                email: "demo@gmail.com"
+            };
+
+            localStorage.setItem("demo", "true");
+
+            dispatch(setAuth(demoUser));
+            navigate("/meetings");
+            return;
+        }
+
         const response = await authServices.login(loginData);
         if (response) {
             // console.log('Login successful:', response);
@@ -51,6 +67,19 @@ function Login() {
         <div className="login-container">
             <form className="login-form" onSubmit={handleSubmit}>
                 <h2 className="login-title">Log In</h2>
+                
+                <div style={{
+                    backgroundColor: '#e3f2fd',
+                    padding: '12px',
+                    borderRadius: '8px',
+                    marginBottom: '20px',
+                    border: '1px solid #2196f3'
+                }}>
+                    <p style={{ margin: 0, fontSize: '14px', color: '#1976d2' }}>
+                        <strong>Demo Mode:</strong> Login with email: <code>demo@gmail.com</code> and password: <code>demo</code>
+                    </p>
+                </div>
+
                 <div className="login-input-group">
                     <label>Email</label>
                     <input

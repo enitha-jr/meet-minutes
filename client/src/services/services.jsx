@@ -76,11 +76,6 @@ const getMeetingsByUser = async (user_id) => {
     }
   }
 
-
-
-
-
-
 const services = {
     getUsers,
     getNextMid,

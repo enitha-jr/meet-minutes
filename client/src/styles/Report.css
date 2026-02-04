@@ -145,3 +145,94 @@
   width:10vw;
   background-color: rgb(254, 86, 86);
 }
+
+.report-empty {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 5px;
+  color: #666;
+}
+
+/* Report Header Styles */
+.report-header {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+}
+
+.report-header h2 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 28px;
+}
+
+.report-date,
+.report-by {
+  margin: 5px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Report Section Styles */
+.report-section {
+  margin: 25px 0;
+  padding: 15px 20px;
+  background-color: white;
+  border-left: 4px solid #679bb4;
+  border-radius: 4px;
+}
+
+.report-section h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.report-section p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.report-section ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.report-section li {
+  margin: 10px 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+.report-section .report-table {
+  margin: 0;
+  width: 100%;
+}
+
+.report-section .report-table thead {
+  background-color: rgba(103, 153, 180, 0.2);
+}
+
+.report-section .report-table th {
+  padding: 10px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+}
+
+.report-section .report-table tr:hover {
+  background-color: rgba(103, 153, 180, 0.1);
+}
+
+.report-status-btn.attended {
+  background-color: #4caf50;
+  color: white;
+}
+
+.report-status-btn.absent {
+  background-color: #f44336;
+  color: white;
+}

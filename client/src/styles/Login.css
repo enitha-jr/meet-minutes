@@ -1,99 +1,141 @@
-/* Container */
+/* =========================================
+   LOGIN CONTAINER
+   (no full screen bg since hero handles bg)
+========================================= */
+
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #f5f6fa;
-    padding: 20px;
-  }
-  
-  /* Form */
-  .login-form {
-    background: #ffffff;
-    padding: 30px 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  .login-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 25px;
-    color: #333;
-  }
-  
-  /* Input Group */
-  .login-input-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  
-  .login-input-group label {
-    margin-bottom: 6px;
-    font-size: 14px;
-    color: #555;
-  }
-  
-  .login-input {
-    padding: 10px 12px;
-    font-size: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    outline: none;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .login-input:focus {
-    border-color: #4a90e2;
-    box-shadow: 0 0 4px rgba(74, 144, 226, 0.4);
-  }
-  
-  /* Button */
-  .login-button {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    background-color: #2a3b4c;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .login-button:hover {
-    background-color: #1e2a36;
-  }
-  
-  /* Extra Texts */
-  .forgot-password {
-    text-align: right;
-    font-size: 13px;
-    margin-top: 10px;
-    color: #777;
-    cursor: pointer;
-  }
-  
-  .signup {
-    text-align: center;
-    font-size: 14px;
-    margin-top: 20px;
-    color: #333;
-  }
-  
-  .signup a {
-    color: #4a90e2;
-    text-decoration: none;
-    font-weight: 500;
-    cursor: pointer;
-  }
-  
-  .signup a:hover {
-    text-decoration: underline;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33vw;
+}
+
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.login-form {
+  background: #ffffff;
+  padding: 30px 32px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  box-shadow: 0 0 15px #7f97a2;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.login-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 22px;
+  color: #2a3b4c;
+}
+
+/* =========================================
+   INPUT GROUP
+========================================= */
+
+.login-input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.login-input-group label {
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #555;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.login-input {
+  padding: 10px 12px;
+  font-size: 14px;
+
+  border: 1px solid #d0d5da;
+  border-radius: 8px;
+
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.login-input:focus {
+  border-color: #2a3b4c;
+  box-shadow: 0 0 0 2px rgba(42, 59, 76, 0.15);
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.login-button {
+  width: 100%;
+  padding: 11px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  background-color: #2a3b4c;
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.login-button:hover {
+  background-color: #1a2b3c;
+}
+
+
+/* =========================================
+   EXTRA TEXTS
+========================================= */
+
+.forgot-password {
+  text-align: right;
+  font-size: 13px;
+  margin-top: 8px;
+
+  color: #777;
+  cursor: pointer;
+}
+
+.forgot-password:hover {
+  color: #2a3b4c;
+}
+
+
+.signup {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 18px;
+
+  color: #333;
+}
+
+.signup a {
+  color: #2a3b4c;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.signup a:hover {
+  text-decoration: underline;
+}

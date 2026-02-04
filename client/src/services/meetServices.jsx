@@ -136,6 +136,46 @@ const updateAttendance = async (attendanceData) => {
     }
 }
 
+const getReport = async (meetingid) => {
+    try {
+        const response = await apiInstance.get(`/report/${meetingid}`);
+        return response.data;
+    }
+    catch (error) {
+        console.error("Error fetching report:", error);
+    }
+}
+
+const generateReport = async (meetingid, reportData) => {
+    try {
+        const response = await apiInstance.post(`/report/${meetingid}`, reportData);
+        return response.data;
+    }
+    catch (error) {
+        console.error("Error generating report:", error);
+    }
+}
+
+const updateReport = async (meetingid, reportData) => {
+    try {
+        const response = await apiInstance.put(`/report/${meetingid}`, reportData);
+        return response.data;
+    }
+    catch (error) {
+        console.error("Error updating report:", error);
+    }
+}
+
+const deleteReport = async (meetingid) => {
+    try {
+        const response = await apiInstance.delete(`/report/${meetingid}`);
+        return response.data;
+    }
+    catch (error) {
+        console.error("Error deleting report:", error);
+    }
+}
+
 
 const meetServices = {
     completeMeeting,
@@ -154,6 +194,11 @@ const meetServices = {
 
     fetchMembers,
     updateAttendance,
+    
+    getReport,
+    generateReport,
+    updateReport,
+    deleteReport,
 }
 
 export default meetServices;

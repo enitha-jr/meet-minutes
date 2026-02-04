@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import Landing from "../pages/Landing";
+import Landing from "../pages/Landing/Landing";
 import Template from "../pages/Template";
 import ProtectedRoute from "./ProtectedRoutes";
 /* ---------------------------------------------------- */
