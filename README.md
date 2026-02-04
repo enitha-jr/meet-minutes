@@ -1,4 +1,4 @@
-# MeetMinutes (https://meetminutes-demo.vercel.app)
+# MeetMinutes [https://meet-minutes.vercel.app/]
     MeetMinutes is a full-stack meeting management system designed to organize meetings,
     track minutes, assign tasks, and enable real-time communication between participants.  
 ---
