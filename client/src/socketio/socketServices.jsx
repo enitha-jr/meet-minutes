@@ -18,15 +18,19 @@ export const sendMessage = ({ room_id, content }) => {
   if (isDemo()) {
     console.log("Demo mode: Message sent (simulated)");
     // Add message to demo DB for immediate feedback
+    const nextId = demoDB.nextIds.nextMessageId++;
     const newMessage = {
-      msg_id: demoDB.messages.length + 1,
-      sender_id: 1,
-      sender: "Demo Host",
-      content,
+      message_id: nextId,
+      msg_id: nextId,
       room_id,
-      timestamp: new Date().toISOString()
+      sender_id: demoDB.demoUser.user_id,
+      sender: demoDB.demoUser.username,
+      username: demoDB.demoUser.username,
+      content,
+      timestamp: new Date().toISOString(),
+      created_at: new Date().toISOString()
     };
-    demoDB.messages.push(newMessage);
+    demoDB.roomMessages.push(newMessage);
     
     // Trigger callback if listener is set
     if (window._demoMessageCallback) {

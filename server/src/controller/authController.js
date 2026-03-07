@@ -3,10 +3,23 @@ const { JWT_SECRET } = require('../config/config');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
+const DEMO_MODE = true;
+const DEMO_USER = {
+    user_id: 1,
+    username: 'test1',
+    email: 'test1@example.com',
+};
+
 class authController {
 
     login = async (req, res) => {
         try {
+            if (DEMO_MODE) {
+                const token = jwt.sign(DEMO_USER, JWT_SECRET, { expiresIn: '7d' });
+                const decoded = jwt.verify(token, JWT_SECRET);
+                return res.json({ ...DEMO_USER, token, exp: decoded.exp });
+            }
+
             const { email, password } = req.body;
             // console.log('Login attempting');
             const sql = "SELECT * FROM users WHERE email = ?";
@@ -38,6 +51,13 @@ class authController {
 
     register = async (req, res) => {
         try {
+            if (DEMO_MODE) {
+                return res.status(201).json({
+                    message: 'Demo mode: registration accepted',
+                    user: DEMO_USER,
+                });
+            }
+
             // console.log('Registering user:', req.body);
             const { username, password, email} = req.body;
             const salt = await bcrypt.genSalt(10)

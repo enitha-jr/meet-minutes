@@ -6,8 +6,9 @@
 }
 
 .newmeeting-container {
+  margin-top: 75px;
   width: 600px;
-  background: #f8f8f8;
+  background: #fffefe;
   border-radius: 10px;
   padding: 2rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);

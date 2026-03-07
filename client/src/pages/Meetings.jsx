@@ -47,50 +47,57 @@ function Meetings() {
         <Nav1 />
       </div>
       <div className="meet-body">
-        {details.map((detail) => (
-          <div className='meet-overview' key={detail.meetingid} onClick={() => handleDetail(detail.meetingid)}>
-            <div className="followup-badge">
-              {detail.followup === "yes" && (
-                <TbSquareRoundedLetterF size="28" />
-              )}
-            </div>
-            <div className='meet-image'>
-              {userData.user_id === detail.host ?
-                (<img src={meeting1} width="140" height="100" />) :
-                (<img src={meeting2} width="140" height="100" />)
-              }
-            </div>
-            <div className='meet-head'>
-              <div className='meet-title'>
-                {detail.title}
-              </div>
-            </div>
-            <div className='meet-details'>
-              <div className='meet-details-container'>
-                <img src={person} width={22} />
-                <div>{detail.host_name || "Unknown"}</div>
-              </div>
-              <div className='meet-details-container'>
-                <IoCalendarNumberSharp size={22} />
-                <div>{detail.date}</div>
-              </div>
-              <div className='meet-details-container'>
-                <img src={schedule} width={22} />
-                <div>{detail.time}</div>
-              </div>
-              <div className='meet-details-container'>
-                <IoLocationSharp size={22} />
-                <div>{detail.mode}</div>
-              </div>
-              {detail.mode === 'offline' && (
-                <div className='meet-details-container'>
-                  <img src={venue} width={22} />
-                  <div>{detail.venue}</div>
-                </div>
-              )}
-            </div>
+        {details.length === 0 ? (
+          <div className='no-meetings-box'>
+            <h3>No Meetings yet</h3>
+            <p>Your scheduled meetings will appear here.</p>
           </div>
-        ))}
+        ) : (
+          details.map((detail) => (
+            <div className='meet-overview' key={detail.meetingid} onClick={() => handleDetail(detail.meetingid)}>
+              <div className="followup-badge">
+                {detail.followup === "yes" && (
+                  <TbSquareRoundedLetterF size="28" />
+                )}
+              </div>
+              <div className='meet-image'>
+                {userData.user_id === detail.host ?
+                  (<img src={meeting1} width="140" height="100" />) :
+                  (<img src={meeting2} width="140" height="100" />)
+                }
+              </div>
+              <div className='meet-head'>
+                <div className='meet-title'>
+                  {detail.title}
+                </div>
+              </div>
+              <div className='meet-details'>
+                <div className='meet-details-container'>
+                  <img src={person} width={22} />
+                  <div>{detail.host_name || "Unknown"}</div>
+                </div>
+                <div className='meet-details-container'>
+                  <IoCalendarNumberSharp size={22} />
+                  <div>{detail.date}</div>
+                </div>
+                <div className='meet-details-container'>
+                  <img src={schedule} width={22} />
+                  <div>{detail.time}</div>
+                </div>
+                <div className='meet-details-container'>
+                  <IoLocationSharp size={22} />
+                  <div>{detail.mode}</div>
+                </div>
+                {detail.mode === 'offline' && (
+                  <div className='meet-details-container'>
+                    <img src={venue} width={22} />
+                    <div>{detail.venue}</div>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))
+        )}
       </div>
     </div>
   )

@@ -1,10 +1,21 @@
 const db = require("../utils/connectdb");
 
+const DEMO_USER = {
+  user_id: 1,
+  username: "test1",
+  email: "test1@example.com"
+};
+
+const ensureDemoUser = (req) => {
+  req.user = req.user || DEMO_USER;
+  return req.user;
+};
+
 class messageController {
 
   getRoomByMeeting = async (req, res) => {
     const { meetingId } = req.params;
-    const userId = req.user.user_id;
+    const userId = ensureDemoUser(req).user_id;
 
     try {
       const [meetingRows] = await db.query(
@@ -50,7 +61,7 @@ class messageController {
 
   // Fetch all rooms (meetings/follow-ups) user belongs to
   getRoomsForUser = async (req, res) => {
-    const user_id = req.user.user_id;
+    const user_id = ensureDemoUser(req).user_id;
 
     try {
       const query = `

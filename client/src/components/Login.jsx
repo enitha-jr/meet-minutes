@@ -32,19 +32,18 @@ function Login() {
         e.preventDefault();
         // console.log('Form Data:', loginData);
 
-        // Demo mode login - any credentials work in demo mode
+        // Standalone demo login for deployment.
         if (
-            loginData.email === "demo@gmail.com" &&
-            loginData.password === "demo"
+            loginData.email === "test1@example.com" &&
+            loginData.password === "test1"
         ) {
             const demoUser = {
                 token: "demo-token-123",
                 user_id: 1,
-                username: "Demo Host",
-                email: "demo@gmail.com"
+                username: "test1",
+                email: "test1@example.com",
+                exp: Math.floor(Date.now() / 1000) + (7 * 24 * 60 * 60)
             };
-
-            localStorage.setItem("demo", "true");
 
             dispatch(setAuth(demoUser));
             navigate("/meetings");
@@ -76,7 +75,7 @@ function Login() {
                     border: '1px solid #2196f3'
                 }}>
                     <p style={{ margin: 0, fontSize: '14px', color: '#1976d2' }}>
-                        <strong>Demo Mode:</strong> Login with email: <code>demo@gmail.com</code> and password: <code>demo</code>
+                        <strong>Demo Mode:</strong> Login with email: <code>test1@example.com</code> and password: <code>test1</code>
                     </p>
                 </div>
 

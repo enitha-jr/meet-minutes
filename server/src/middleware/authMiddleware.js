@@ -2,6 +2,8 @@ const jwt = require('jsonwebtoken');
 const { JWT_SECRET } = require('../config/config');
 
 function authMiddleware(req, res, next) {
+    // NOTE: This middleware is intentionally not mounted in routes during demo deployments.
+    // Re-enable by restoring router.use(authMiddleware) in src/routes/router.js.
     const authHeader = req.headers['authorization'];
     if (authHeader && authHeader.startsWith('Bearer ')) {
         const token = authHeader.split(' ')[1];

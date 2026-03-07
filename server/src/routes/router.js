@@ -9,7 +9,13 @@ const taskController = require('../controller/taskController');
 const reportController = require('../controller/reportController');
 const messageController = require('../controller/messageController');
 
-const { authMiddleware } = require('../middleware/authMiddleware');
+// const { authMiddleware } = require('../middleware/authMiddleware');
+
+const demoUser = {
+    user_id: 1,
+    username: 'test1',
+    email: 'test1@example.com'
+};
 
 router.route('/login')
     .post(authController.login);
@@ -17,7 +23,12 @@ router.route('/login')
 router.route('/register')
     .post(authController.register);
 
-router.use(authMiddleware);
+// Demo mode: JWT enforcement is disabled for deployment demos.
+// Re-enable by replacing this middleware with: router.use(authMiddleware);
+router.use((req, res, next) => {
+    req.user = req.user || demoUser;
+    next();
+});
 
 router.route('/user')
     .get(authController.getUser);

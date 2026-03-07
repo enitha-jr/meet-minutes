@@ -88,3 +88,49 @@
     justify-content: end !important;
     width: 250px;
 }
+
+.no-meetings-box {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    border: 2px dashed #c8d3eb;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #f7faff 0%, #eef4ff 100%);
+    color: #1f2a44;
+    text-align: center;
+    padding: 24px;
+}
+
+.no-meetings-box h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.no-meetings-box p {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #4a5a7a;
+}
+
+@media (max-width: 1024px) {
+    .meet-body {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .meet-body {
+        grid-template-columns: 1fr;
+        padding: 24px;
+    }
+
+    .meet-overview {
+        width: 100%;
+        max-width: 330px;
+        justify-self: center;
+    }
+}

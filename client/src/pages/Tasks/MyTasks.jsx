@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import taskService from "../../services/taskServices";
 import "../../styles/Mytasks.css";
-import { SlClose } from "react-icons/sl";
 
 function Mytasks() {
 
@@ -11,6 +10,9 @@ function Mytasks() {
   const [selectedTask, setSelectedTask] = useState(null);
   const [showpopup, setShowpopup] = useState(false);
 
+  const assignedCount = tasklist.filter((t) => t.status === "assigned").length;
+  const pendingCount = tasklist.filter((t) => t.status === "pending").length;
+  const completedCount = tasklist.filter((t) => t.status === "completed").length;
 
   const showTaskform = (task) => {
     setSelectedTask(task);
@@ -58,9 +60,26 @@ function Mytasks() {
 
   return (
     <div className='mytasks-content'>
+      <div className='task-stats-row'>
+        <div className='task-stat-card stat-assigned'>
+          <span>Assigned</span>
+          <strong>{assignedCount}</strong>
+        </div>
+        <div className='task-stat-card stat-pending'>
+          <span>Review Pending</span>
+          <strong>{pendingCount}</strong>
+        </div>
+        <div className='task-stat-card stat-completed'>
+          <span>Completed</span>
+          <strong>{completedCount}</strong>
+        </div>
+      </div>
 
       {!tasklist.length ? (
-        <div className='mytasks-container'>No tasks assigned!</div>
+        <div className='no-tasks-box'>
+          <h5>No tasks assigned yet</h5>
+          <p>Tasks assigned to you will appear here.</p>
+        </div>
       ) : (
         <div className='mytasks-container'>
           <table className='mytasks-table'>

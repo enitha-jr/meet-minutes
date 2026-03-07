@@ -5,12 +5,12 @@ import { isDemo } from "../services/demoService";
 const connectSocket = (token) => {
     if (!token) return;
     
-    // Don't connect socket in demo mode
+    // Don't connect socket in demo mode (standalone deployment)
     if (isDemo()) {
         console.log("Demo mode: Socket connection skipped");
         return;
     }
-    
+
     // console.log("Connecting socket with token:", token);
     console.log("Connecting socket with token");
     socket.auth = { token };
