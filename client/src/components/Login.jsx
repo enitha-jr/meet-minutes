@@ -75,7 +75,7 @@ function Login() {
                     border: '1px solid #2196f3'
                 }}>
                     <p style={{ margin: 0, fontSize: '14px', color: '#1976d2' }}>
-                        <strong>Demo Mode:</strong> Login with email: <code>test1@example.com</code> and password: <code>test1</code>
+                        <strong>Demo Mode:</strong> Login with email: <code>test1@gmail.com</code> and password: <code>asdfg</code>
                     </p>
                 </div>
 
