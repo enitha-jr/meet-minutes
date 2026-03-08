@@ -34,14 +34,14 @@ function Login() {
 
         // Standalone demo login for deployment.
         if (
-            loginData.email === "test1@example.com" &&
-            loginData.password === "test1"
+            loginData.email === "test@.gmailcom" &&
+            loginData.password === "asdfg"
         ) {
             const demoUser = {
                 token: "demo-token-123",
                 user_id: 1,
                 username: "test1",
-                email: "test1@example.com",
+                email: "test1@gmail.com.com",
                 exp: Math.floor(Date.now() / 1000) + (7 * 24 * 60 * 60)
             };
 
